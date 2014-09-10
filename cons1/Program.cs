@@ -10,6 +10,7 @@ namespace cons1
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("jkasbdiahbsd");
         }
     }
 }
