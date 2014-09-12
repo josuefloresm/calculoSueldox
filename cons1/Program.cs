@@ -11,6 +11,7 @@ namespace Sueldo
         public static void Main(string[] args)
         {
 
+            
             int horaTS = 0;
             double valorH = 0, horaFS = 0;
             int mes;
@@ -18,9 +19,9 @@ namespace Sueldo
             double rut;
             string nombres;
             string apellidos;
-            int prevision;
+           // int prevision;
             double anticipos, descuentos, bonos;
-            Double sueldo;
+            Double sueldo, ingresos;
 
             Console.WriteLine("Horas trabajadas en dias de semana: ");
             horaTS = int.Parse(Console.ReadLine());
@@ -45,18 +46,28 @@ namespace Sueldo
 
             Console.WriteLine("Apellidos: ");
             apellidos = Console.ReadLine();
+       
+            Console.WriteLine("Prevision social: 1.- Fonasa, 2.- ISAPRE");
+            string str = Console.ReadLine();
+            int prevision = 0;
+            
+            
+            switch(str)
+            {
+                case "1":
+                case "Fonasa":
+                    prevision = 10000; //ingresos * 0.07;
+                    break;
+                case "2":
+                case "ISAPRE":
+                    prevision = 35000;
+                    break;
 
-            Console.WriteLine("Prevision social: ");//aqui usar switch case
-            Console.WriteLine("1.- Fonasa");
-            Console.WriteLine("2.- ISAPRE");
-            //int prevision;
-            //switch
 
-            prevision = int.Parse(Console.ReadLine());
+            }
 
-            //Console.WriteLine("Seleccione sistema de salud: 1.-Fonasa, 2.- Isapre");
 
-            //Console.ReadLine();
+            //prevision = int.Parse(Console.ReadLine());
 
             Console.WriteLine("Anticipos otorgados: ");
             anticipos = int.Parse(Console.ReadLine());
@@ -73,7 +84,7 @@ namespace Sueldo
             Console.WriteLine("Nombres: " + nombres);
             Console.WriteLine("Apellidos: " + apellidos);
             Console.WriteLine("RUT: " + rut);
-            Console.WriteLine("Previsión Social: " + prevision);
+            Console.WriteLine("Previsión Social: $" + prevision);
             Console.WriteLine("Horas trabajas en semana: " + horaTS + " horas");
             Console.WriteLine("Horas trabajas en fin de semana: " + horaFS + " horas");
             Console.WriteLine("Valor por hora: $ " + valorH);
@@ -81,12 +92,12 @@ namespace Sueldo
             Console.WriteLine("Descuentos: $ " + descuentos);
             Console.WriteLine("Anticipos otorgados: $ " + anticipos);
             Console.WriteLine();
-            sueldo = (horaTS * valorH) + (horaFS * (valorH * 1.5)) + bonos - descuentos - anticipos - prevision;
+                                ingresos = (horaTS * valorH) + (horaFS * (valorH * 1.5));
+                                sueldo =  ingresos + bonos - descuentos - anticipos - prevision;
             Console.WriteLine("Sueldo + $ " + sueldo);
             Console.WriteLine();
             Console.WriteLine("Pulse cualquier tecla para salir");
             Console.ReadKey();
-
 
         }
     }
