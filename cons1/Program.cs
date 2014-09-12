@@ -39,10 +39,68 @@ namespace Sueldo
             ano = int.Parse(Console.ReadLine());
 
             Console.WriteLine("RUT: (sin guión)"); //validar largo
+
+            //string digitoVerificador(double rut)
+            //        {
+            //              int Digito;
+            //              int Contador;
+            //              int Multiplo;
+            //              int Acumulador;
+            //              string RutDigito;
+
+            //              Contador = 2;
+            //              Acumulador = 0;
+
+            //              while (rut != 0)
+            //              {
+            //              Multiplo = (rut % 10) * Contador;
+            //              Acumulador = Acumulador + Multiplo;
+            //              rut = rut/10;
+            //              Contador = Contador + 1;
+            //              if (Contador == 8)
+            //                    {
+            //                     Contador = 2;
+            //                    }
+
+            //              }
+
+            //              Digito = 11 - (Acumulador % 11);
+            //              RutDigito = Digito.ToString().Trim();
+            //              if (Digito == 10 )
+            //              {
+            //                    RutDigito = "K";
+            //              }
+            //              if (Digito == 11)
+            //              {
+            //                    RutDigito = "0";
+            //              }
+            //              return (RutDigito);
+            //              }
+
+            //              }
+
+
             rut = int.Parse(Console.ReadLine());
 
             Console.WriteLine("Nombres: ");
             nombres = Console.ReadLine();
+            
+                /*if (Char.IsLetter(nombres.KeyChar))
+                {
+                    nombres.Handled = false;
+                }
+                else if (Char.IsControl(e.KeyChar))
+                {
+                    nombres.Handled = false;
+                }
+                else if (Char.IsSeparator(e.KeyChar))
+                {
+                    nombres.Handled = false;
+                }
+                else
+                {
+                    nombres.Handled = true;
+                } */
 
             Console.WriteLine("Apellidos: ");
             apellidos = Console.ReadLine();
@@ -56,13 +114,12 @@ namespace Sueldo
             {
                 case "1":
                 case "Fonasa":
-                    prevision = 10000; //ingresos * 0.07;
+                    prevision = 15750; //7% del sueldo minimo ($ 225 000)
                     break;
                 case "2":
                 case "ISAPRE":
                     prevision = 35000;
                     break;
-
 
             }
 
@@ -84,10 +141,10 @@ namespace Sueldo
             Console.WriteLine("Nombres: " + nombres);
             Console.WriteLine("Apellidos: " + apellidos);
             Console.WriteLine("RUT: " + rut);
-            Console.WriteLine("Previsión Social: $" + prevision);
             Console.WriteLine("Horas trabajas en semana: " + horaTS + " horas");
             Console.WriteLine("Horas trabajas en fin de semana: " + horaFS + " horas");
             Console.WriteLine("Valor por hora: $ " + valorH);
+            Console.WriteLine("Previsión Social: $" + prevision);
             Console.WriteLine("Bonos: $ " + bonos);
             Console.WriteLine("Descuentos: $ " + descuentos);
             Console.WriteLine("Anticipos otorgados: $ " + anticipos);
