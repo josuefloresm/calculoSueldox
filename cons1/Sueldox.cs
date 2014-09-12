@@ -155,6 +155,7 @@ namespace Sueldo
             Console.WriteLine();
             Console.WriteLine("Pulse cualquier tecla para salir");
             Console.ReadKey();
+            
 
         }
     }
